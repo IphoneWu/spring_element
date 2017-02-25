@@ -1,0 +1,69 @@
+package demo2.Dao.impl;
+
+import demo2.Dao.CustomerDao;
+import demo2.Po.Customer;
+
+import javax.sql.DataSource;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+
+/**
+ * Created by win8 on 2017/2/25.
+ */
+public class CustomerDaoImpl implements CustomerDao {
+    private DataSource dataSource;
+    public void setDataSource(DataSource dataSource) {
+        this.dataSource = dataSource;
+    }
+
+    public void insert(Customer customer) {
+        String sql = "INSERT INTO CUSTOMER " + "(CUST_ID, NAME, AGE) VALUES (?, ?, ?)";
+        Connection conn = null;
+        try {
+            conn = dataSource.getConnection();
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setInt(1, customer.getCUST_ID());
+            ps.setString(2, customer.getNAME());
+            ps.setInt(3, customer.getAGE());
+            ps.executeUpdate();
+            ps.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public Customer findCustomerByCustId(int CustId) {
+        String sql = "SELECT * FROM CUSTOMER WHERE CUST_ID = ?";
+        Connection conn = null;
+        Customer customer = null;
+        try {
+            conn = dataSource.getConnection();
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setInt(1,CustId);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()){
+                customer=new Customer(rs.getInt("CUST_ID"),rs.getString("NAME"),rs.getInt("AGE"));
+            }
+            rs.close();
+            ps.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return customer;
+    }
+}

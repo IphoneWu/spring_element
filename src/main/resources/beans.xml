@@ -10,4 +10,7 @@
         <property name="type" value="1"/>
         <property name="action" value="buy"/>
     </bean>
+
+    <import resource="Spring-Customer.xml"/>
+    <import resource="Spring-DataSource.xml"/>
 </beans>
