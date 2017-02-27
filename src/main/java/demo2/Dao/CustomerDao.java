@@ -13,4 +13,5 @@ public interface CustomerDao {
     public List<Customer> getAllCustomer();
     public String findCustomerNameById(int CustId);
     public void  insertBatchSql(final String sql);
+
 }
