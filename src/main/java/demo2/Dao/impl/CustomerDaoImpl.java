@@ -104,5 +104,15 @@ public class CustomerDaoImpl extends JdbcDaoSupport implements CustomerDao {
         return  name;
     }
 
+    /**
+     * 插入处理的语句
+     * batchUpdate 的使用
+     * @param sql
+     */
+    public void insertBatchSql(String sql) {
+        getJdbcTemplate().batchUpdate(new String[]{sql});
+
+    }
+
 
 }

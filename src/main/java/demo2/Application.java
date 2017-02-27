@@ -28,8 +28,10 @@ public class Application {
 //        for (int i =0;i<customers.size();i++){
 //            System.out.println(customers.get(i));
 //        }
-        String name = customerDao.findCustomerNameById(1);
-        System.out.println(name);
+//        String name = customerDao.findCustomerNameById(1);
+//        System.out.println(name);
+        String sql = "insert into Customer values(8,'xiaohua',12)";
+        customerDao.insertBatchSql(sql);
 
     }
 

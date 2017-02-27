@@ -12,4 +12,5 @@ public interface CustomerDao {
     public Customer findCustomerByCustId(int CUST_ID);
     public List<Customer> getAllCustomer();
     public String findCustomerNameById(int CustId);
+    public void  insertBatchSql(final String sql);
 }
