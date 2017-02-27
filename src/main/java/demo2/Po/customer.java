@@ -8,11 +8,11 @@ public class Customer {
     private String NAME;
     private int AGE;
 
-    public Customer(int CUST_ID, String NAME, int AGE) {
-        this.CUST_ID = CUST_ID;
-        this.NAME = NAME;
-        this.AGE = AGE;
-    }
+//    public Customer(int CUST_ID, String NAME, int AGE) {
+//        this.CUST_ID = CUST_ID;
+//        this.NAME = NAME;
+//        this.AGE = AGE;
+//    }
 
     @Override
     public String toString() {
