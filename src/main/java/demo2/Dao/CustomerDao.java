@@ -7,5 +7,5 @@ import demo2.Po.Customer;
  */
 public interface CustomerDao {
     public void insert(Customer customer);
-    public Customer findCustomerByCustId(int CustId);
+    public Customer findCustomerByCustId(int CUST_ID);
 }
