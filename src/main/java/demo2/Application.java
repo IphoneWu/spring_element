@@ -7,6 +7,8 @@ import demo2.Po.Customer;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.util.List;
+
 /**
  * Created by win8 on 2017/2/25.
  */
@@ -17,8 +19,16 @@ public class Application {
 //        Customer customer = new Customer(21,"xiaoqiang",52);
 //        customerDao.insert(customer);
 //        System.out.println(customer);
-        Customer customer1 = customerDao.findCustomerByCustId(20);
-        System.out.println(customer1);
+//        Customer customer1 = customerDao.findCustomerByCustId(20);
+//        System.out.println(customer1);
+        List<Customer> customers = customerDao.getAllCustomer();
+        for (Customer c : customers){
+            System.out.println("Customer:"+c);
+        }
+//        for (int i =0;i<customers.size();i++){
+//            System.out.println(customers.get(i));
+//        }
+
     }
 
 

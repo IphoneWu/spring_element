@@ -12,6 +12,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 
 /**
@@ -85,4 +86,14 @@ public class CustomerDaoImpl extends JdbcDaoSupport implements CustomerDao {
 //        }
 //        return customer;
 //    }
+
+    /**
+     * 查询多个值
+     */
+    public List<Customer> getAllCustomer() {
+        String sql = "Select * from Customer";
+        List<Customer> customers = getJdbcTemplate().query(sql,new BeanPropertyRowMapper<Customer>(Customer.class));
+        return customers;
+    }
+
 }
