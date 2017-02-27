@@ -10,6 +10,6 @@ public class Application {
     public static void main(String[] args){
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(ApplicationConfig.class);
         Helloworld helloworld = (Helloworld) applicationContext.getBean("helloBean");
-        helloworld.printHelloWorld("This is Spring_JavaConfg!");
+        helloworld.printHelloWorld("This is Spring_JavaConfg!hhhh");
     }
 }
