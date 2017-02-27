@@ -95,5 +95,14 @@ public class CustomerDaoImpl extends JdbcDaoSupport implements CustomerDao {
         List<Customer> customers = getJdbcTemplate().query(sql,new BeanPropertyRowMapper<Customer>(Customer.class));
         return customers;
     }
+    /*
+        查询单列名
+     */
+    public String findCustomerNameById(int CustId){
+        String sql = "Select NAME from Customer where CUST_ID=?";
+        String name = getJdbcTemplate().queryForObject(sql,new Object[]{CustId},String.class);
+        return  name;
+    }
+
 
 }

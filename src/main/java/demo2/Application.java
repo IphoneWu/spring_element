@@ -21,13 +21,15 @@ public class Application {
 //        System.out.println(customer);
 //        Customer customer1 = customerDao.findCustomerByCustId(20);
 //        System.out.println(customer1);
-        List<Customer> customers = customerDao.getAllCustomer();
-        for (Customer c : customers){
-            System.out.println("Customer:"+c);
-        }
+//        List<Customer> customers = customerDao.getAllCustomer();
+//        for (Customer c : customers){
+//            System.out.println("Customer:"+c);
+//        }
 //        for (int i =0;i<customers.size();i++){
 //            System.out.println(customers.get(i));
 //        }
+        String name = customerDao.findCustomerNameById(1);
+        System.out.println(name);
 
     }
 

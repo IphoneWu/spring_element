@@ -11,4 +11,5 @@ public interface CustomerDao {
     public void insert(Customer customer);
     public Customer findCustomerByCustId(int CUST_ID);
     public List<Customer> getAllCustomer();
+    public String findCustomerNameById(int CustId);
 }
