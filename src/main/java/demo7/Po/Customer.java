@@ -14,6 +14,8 @@ public class Customer {
     private Map<Object, Object> maps;
     private Properties pros;
 
+    private List list;
+
     @Override
     public String toString() {
         return "Customer{" +
@@ -21,7 +23,16 @@ public class Customer {
                 ", sets=" + sets +
                 ", maps=" + maps +
                 ", pros=" + pros +
+                ", list=" + list +
                 '}';
+    }
+
+    public List getList() {
+        return list;
+    }
+
+    public void setList(List list) {
+        this.list = list;
     }
 
     public List<Object> getLists() {

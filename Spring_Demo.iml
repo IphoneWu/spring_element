@@ -23,6 +23,7 @@
           <file>file://$MODULE_DIR$/src/main/resources/demo3/beans.xml</file>
           <file>file://$MODULE_DIR$/src/main/resources/demo5/beans.xml</file>
           <file>file://$MODULE_DIR$/src/main/resources/demo7/beans.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/demo7/beans2.xml</file>
         </fileset>
       </configuration>
     </facet>
