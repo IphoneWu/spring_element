@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+        <bean id="CustomerBean" class="demo7.Po.Customer">
+            <!--list-->
+            <property name="lists">
+                <list>
+                    <value>1</value>
+                    <ref bean="PersonBean"/>
+                    <bean class="demo7.Po.Person">
+                        <property name="name" value="xiaoming"/>
+                        <property name="address" value="Hongkong"/>
+                        <property name="age" value="18"/>
+                    </bean>
+                    <bean class="demo7.Po.Person">
+                        <property name="name" value="xiaoming"/>
+                        <property name="address" value="Hongkong"/>
+                        <property name="age" value="18"/>
+                    </bean>
+                </list>
+            </property>
+            <!--set-->
+            <property name="sets">
+                <set>
+                    <value>1</value>
+                    <ref bean="PersonBean"></ref>
+                    <bean class="demo7.Po.Person">
+                        <property name="name" value="xiaoming"/>
+                        <property name="address" value="Hongkong"/>
+                        <property name="age" value="18"/>
+                    </bean>
+                </set>
+            </property>
+            <!--map-->
+            <property name="maps">
+                <map>
+                    <entry key="Key 1" value="1"/>
+                    <entry key="Key 2" value-ref="PersonBean"/> <!-- 引入PersonBean -->
+                    <entry key="Key 3">
+                        <bean class="demo7.Po.Person">
+                            <property name="name" value="xiaoming"/>
+                            <property name="address" value="Hongkong"/>
+                            <property name="age" value="18"/>
+                        </bean>
+                    </entry>
+                </map>
+            </property>
+            <!--Properties -->
+            <property name="pros">
+                <props>
+                    <prop key="admin">admin</prop>
+                    <prop key="support">123456@qq.com</prop>
+                </props>
+            </property>
+        </bean>
+    <bean id="PersonBean" class="demo7.Po.Person">
+        <property name="name" value="xiaoqiang"/>
+        <property name="address" value="hainan"/>
+        <property name="age" value="20"/>
+    </bean>
+
+
+</beans>
