@@ -10,7 +10,7 @@ public class Application {
     public static void main(String[] args){
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("demo6/beans.xml" );
 
-        A_B_Hellper a_b_hellper = (A_B_Hellper) applicationContext.getBean("Helper");
+        A_B_Hellper a_b_hellper = (A_B_Hellper) applicationContext.getBean("Helper") ;
         a_b_hellper.printHello();
     }
 

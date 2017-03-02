@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
         <bean id="Helper" class="demo6.A_B_Hellper">
             <constructor-arg>
-                <ref bean="B" />
+                <ref bean="B"/>
             </constructor-arg>
         </bean>
     <bean id="A" class="demo6.A"/>
