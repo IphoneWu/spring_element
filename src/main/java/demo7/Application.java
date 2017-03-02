@@ -1,6 +1,8 @@
 package demo7;
 
+
 import demo7.Po.Customer;
+import demo7.Po.DatePo;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -9,8 +11,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class Application {
     public static void main(String[] args){
-        ApplicationContext context = new ClassPathXmlApplicationContext("demo7/beans2.xml");
-        Customer customer = (Customer) context.getBean("CustomerBean");
-        System.out.println(customer);
+        ApplicationContext context = new ClassPathXmlApplicationContext("demo7/datePo.xml");
+        DatePo datePo = (DatePo) context.getBean("CustomerBean");
+        System.out.println(datePo);
     }
 }
