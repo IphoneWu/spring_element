@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+        <bean id="customer" class="demo9.Po.Customer">
+            <property name="name" value="dongdong"/>
+            <property name="url" value="www.sb.com"/>
+        </bean>
+        <bean id="hijackAroundMethodBean" class="demo9.HijackAroundMethod"/>
+        <bean id="customerServiceProxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+            <property name="target" ref="customer"/>
+            <property name="interceptorNames">
+                <list>
+                    <value>hijackAroundMethodBean</value>
+                </list>
+            </property>
+        </bean>
+</beans>
