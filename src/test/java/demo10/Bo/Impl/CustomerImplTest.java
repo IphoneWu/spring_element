@@ -14,7 +14,7 @@ public class CustomerImplTest extends TestCase {
     CustomerBo customerBo;
     public void setUp() throws Exception {
         super.setUp();
-        applicationContext = new ClassPathXmlApplicationContext("demo10/applicationContext.xml");
+        applicationContext = new ClassPathXmlApplicationContext("demo10/applicationContext2-aop.xml");
         customerBo = (CustomerBo) applicationContext.getBean("customerBo");
     }
     @Test

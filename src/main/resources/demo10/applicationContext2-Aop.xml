@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <aop:aspectj-autoproxy />
+    <bean id="customerBo" class="demo10.Bo.Impl.CustomerImpl" />
+    <!-- Aspect -->
+    <bean id="logAspect2" class="demo10.LoggingAspect2" />
+
+    <aop:config>
+
+        <aop:aspect id="aspectLoggging" ref="logAspect2">
+
+            <!-- @Before -->
+            <aop:pointcut id="pointCutBefore"
+                          expression="execution(* demo10.Bo.CustomerBo.addCustomer(..))" />
+
+            <aop:before method="logBefore" pointcut-ref="pointCutBefore" />
+
+            <!--&lt;!&ndash; @After &ndash;&gt;-->
+            <!--<aop:pointcut id="pointCutAfter" expression="execution(* demo10.Bo.CustomerBo.addCustomer(..))" />-->
+
+            <!--<aop:after method="logAfter" pointcut-ref="pointCutAfter" />-->
+
+            <!-- @AfterReturning -->
+            <aop:pointcut id="pointCutAfterReturning"
+                          expression="execution(* demo10.Bo.CustomerBo.addCustomerReturnValue(..))" />
+
+            <aop:after-returning method="logAfterReturning"
+                                 returning="result" pointcut-ref="pointCutAfterReturning" />
+
+            <!-- @AfterThrowing -->
+            <aop:pointcut id="pointCutAfterThrowing"
+                          expression="execution(* demo10.Bo.CustomerBo.addCustomerThrowException(..))" />
+
+            <aop:after-throwing method="logAfterThrowing"
+                                throwing="error" pointcut-ref="pointCutAfterThrowing" />
+
+            <!-- @Around -->
+            <aop:pointcut id="pointCutAround"
+                          expression="execution(* demo10.Bo.CustomerBo.addCustomerAround(..))" />
+
+            <aop:around method="logAround" pointcut-ref="pointCutAround" />
+
+        </aop:aspect>
+
+    </aop:config>
+
+</beans>

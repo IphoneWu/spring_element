@@ -9,4 +9,5 @@
 
     <!-- Aspect -->
     <bean id="logAspect" class="demo10.LoggingAspect" />
+
 </beans>
